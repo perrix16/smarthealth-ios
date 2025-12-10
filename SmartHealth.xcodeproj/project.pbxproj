@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 63;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D5C648EA56DBA70D37D9E5D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50C80C873F4D73F7B2005A6 /* User.swift */; };
+		71AA29D3BA3DACDBB593C059 /* SmartHealthApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C16F2A4413F1CE6B9BCE750 /* SmartHealthApp.swift */; };
+		7D38F7604FA5A74603CAFE4A /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3DF42BF69AE53EB9E1115F /* AuthService.swift */; };
+		9661533BC95F0CB956099FAC /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6B550F411CC07242AD5F28 /* RegisterView.swift */; };
+		DDF4225E072648D3F54122E9 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E4784C891FD471778260FA /* LoginView.swift */; };
+		DF8ED3D36D616889D03BABCC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA83BD37A4588E437C5E5F5 /* NetworkManager.swift */; };
+		FE44D63E5DE8CA88A4714111 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169376C8E5B048B80CCEF1AA /* DashboardView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		169376C8E5B048B80CCEF1AA /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		3C6B550F411CC07242AD5F28 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		3F6D7D0797B04909721965AF /* SmartHealth.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartHealth.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C16F2A4413F1CE6B9BCE750 /* SmartHealthApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartHealthApp.swift; sourceTree = "<group>"; };
+		87E4784C891FD471778260FA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9D3DF42BF69AE53EB9E1115F /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		B50C80C873F4D73F7B2005A6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BCA83BD37A4588E437C5E5F5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		75FAE2BAB656C5481D8D5A43 = {
+			isa = PBXGroup;
+			children = (
+				FC0E7298F951DF4D9FFF08B4 /* App */,
+				8910231029B2B77E9D80ADE0 /* Models */,
+				79C94572EC7F950E6CDE4409 /* Services */,
+				CB76216317C5C952F0875921 /* Views */,
+				F1BD73A68D3598EFFE9B31FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79C94572EC7F950E6CDE4409 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9D3DF42BF69AE53EB9E1115F /* AuthService.swift */,
+				BCA83BD37A4588E437C5E5F5 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8910231029B2B77E9D80ADE0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B50C80C873F4D73F7B2005A6 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB76216317C5C952F0875921 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				169376C8E5B048B80CCEF1AA /* DashboardView.swift */,
+				87E4784C891FD471778260FA /* LoginView.swift */,
+				3C6B550F411CC07242AD5F28 /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1BD73A68D3598EFFE9B31FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F6D7D0797B04909721965AF /* SmartHealth.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FC0E7298F951DF4D9FFF08B4 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				4C16F2A4413F1CE6B9BCE750 /* SmartHealthApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ECADE13723A0B7F19ABC5991 /* SmartHealth */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0EC0CB5623C5D13C55F5C1C6 /* Build configuration list for PBXNativeTarget "SmartHealth" */;
+			buildPhases = (
+				2D2F5ADEA7F1E22ACFE6CBCF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartHealth;
+			packageProductDependencies = (
+			);
+			productName = SmartHealth;
+			productReference = 3F6D7D0797B04909721965AF /* SmartHealth.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46C82DAEDEEBB3193E011AA4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = F670D1020E55049F4BF96913 /* Build configuration list for PBXProject "SmartHealth" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 75FAE2BAB656C5481D8D5A43;
+			minimizedProjectReferenceProxies = 1;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ECADE13723A0B7F19ABC5991 /* SmartHealth */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2D2F5ADEA7F1E22ACFE6CBCF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D38F7604FA5A74603CAFE4A /* AuthService.swift in Sources */,
+				FE44D63E5DE8CA88A4714111 /* DashboardView.swift in Sources */,
+				DDF4225E072648D3F54122E9 /* LoginView.swift in Sources */,
+				DF8ED3D36D616889D03BABCC /* NetworkManager.swift in Sources */,
+				9661533BC95F0CB956099FAC /* RegisterView.swift in Sources */,
+				71AA29D3BA3DACDBB593C059 /* SmartHealthApp.swift in Sources */,
+				4D5C648EA56DBA70D37D9E5D /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2472BFE3F625ED7274C880A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4UYL2U36M4;
+				INFOPLIST_FILE = SmartHealth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.perrix16.smarthealth;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B6017A774A09064DFD94812 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		6BC13292A6D1F759FE9AB18D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		821ECD2DB9258086AD7EF6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4UYL2U36M4;
+				INFOPLIST_FILE = SmartHealth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.perrix16.smarthealth;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0EC0CB5623C5D13C55F5C1C6 /* Build configuration list for PBXNativeTarget "SmartHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2472BFE3F625ED7274C880A5 /* Debug */,
+				821ECD2DB9258086AD7EF6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F670D1020E55049F4BF96913 /* Build configuration list for PBXProject "SmartHealth" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BC13292A6D1F759FE9AB18D /* Debug */,
+				5B6017A774A09064DFD94812 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46C82DAEDEEBB3193E011AA4 /* Project object */;
+}
