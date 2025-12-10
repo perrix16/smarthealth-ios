@@ -2,11 +2,12 @@
 //  AuthService.swift
 //  SmartHealth
 //
-//  Created by Salvatore on 10/12/2025.
+//  Updated for Firebase Auth + Solid Backend integration
 //
 
 import Foundation
 import Combine
+import FirebaseAuth
 
 class AuthService: ObservableObject {
     static let shared = AuthService()
@@ -21,59 +22,82 @@ class AuthService: ObservableObject {
     private init() {
         loadToken()
         loadUser()
+        
+        // Firebase Auth state observer
+        Auth.auth().addStateDidChangeListener { [weak self] _, firebaseUser in
+            if firebaseUser == nil {
+                self?.logout()
+            }
+        }
     }
     
-    // MARK: - Login
-    func login(email: String, password: String) async throws -> User {
-        let body: [String: Any] = [
-            "email": email,
-            "password": password
-        ]
-        
-        let response: LoginResponse = try await NetworkManager.shared.request(
-            endpoint: "/api/auth/login",
-            method: .post,
-            body: body
-        )
-        
-        // Save auth data
-        self.authToken = response.token
-        self.currentUser = response.user
-        self.isAuthenticated = true
-        
-        saveToken(response.token)
-        saveUser(response.user)
-        
-        return response.user
-    }
-    
-    // MARK: - Register
+    // MARK: - Register with Firebase + Solid
     func register(email: String, password: String, name: String?) async throws -> User {
+        // 1. Create user in Firebase Auth
+        let authResult = try await Auth.auth().createUser(withEmail: email, password: password)
+        
+        // 2. Get Firebase ID Token
+        let firebaseToken = try await authResult.user.getIDToken()
+        
+        // 3. Sync with Solid backend
         let body: [String: Any] = [
+            "firebaseUID": authResult.user.uid,
             "email": email,
-            "password": password,
             "name": name ?? ""
         ]
         
         let response: RegisterResponse = try await NetworkManager.shared.request(
-            endpoint: "/api/auth/register",
+            endpoint: "/api/auth/sync-firebase",
             method: .post,
-            body: body
+            body: body,
+            token: firebaseToken
         )
         
-        // Save auth data
-        self.authToken = response.token
+        // 4. Save locally
+        self.authToken = firebaseToken
         self.currentUser = response.user
         self.isAuthenticated = true
         
-        saveToken(response.token)
+        saveToken(firebaseToken)
         saveUser(response.user)
         
         return response.user
     }
     
+    // MARK: - Login with Firebase + Solid
+    func login(email: String, password: String) async throws -> User {
+        // 1. Authenticate with Firebase
+        let authResult = try await Auth.auth().signIn(withEmail: email, password: password)
+        
+        // 2. Get Firebase ID Token
+        let firebaseToken = try await authResult.user.getIDToken()
+        
+        // 3. Get user profile from Solid
+        let user: User = try await NetworkManager.shared.request(
+            endpoint: "/api/auth/profile",
+            method: .get,
+            token: firebaseToken
+        )
+        
+        // 4. Save locally
+        self.authToken = firebaseToken
+        self.currentUser = user
+        self.isAuthenticated = true
+        
+        saveToken(firebaseToken)
+        saveUser(user)
+        
+        return user
+    }
+    
     // MARK: - Logout
     func logout() {
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error signing out: \(error.localizedDescription)")
+        }
+        
         self.authToken = nil
         self.currentUser = nil
         self.isAuthenticated = false
@@ -84,17 +108,21 @@ class AuthService: ObservableObject {
     
     // MARK: - Get Current User Profile
     func getCurrentUser() async throws -> User {
-        guard let token = authToken else {
+        guard let firebaseUser = Auth.auth().currentUser else {
             throw NetworkError.unauthorized
         }
+        
+        let firebaseToken = try await firebaseUser.getIDToken(forcingRefresh: true)
         
         let user: User = try await NetworkManager.shared.request(
             endpoint: "/api/auth/profile",
             method: .get,
-            token: token
+            token: firebaseToken
         )
         
         self.currentUser = user
+        self.authToken = firebaseToken
+        saveToken(firebaseToken)
         saveUser(user)
         
         return user
@@ -102,9 +130,11 @@ class AuthService: ObservableObject {
     
     // MARK: - Update Profile
     func updateProfile(name: String?, email: String?) async throws -> User {
-        guard let token = authToken else {
+        guard let firebaseUser = Auth.auth().currentUser else {
             throw NetworkError.unauthorized
         }
+        
+        let firebaseToken = try await firebaseUser.getIDToken()
         
         let body: [String: Any] = [
             "name": name ?? "",
@@ -115,7 +145,7 @@ class AuthService: ObservableObject {
             endpoint: "/api/auth/profile",
             method: .patch,
             body: body,
-            token: token
+            token: firebaseToken
         )
         
         self.currentUser = user
@@ -152,6 +182,6 @@ class AuthService: ObservableObject {
     
     // MARK: - Check Authentication
     func checkAuth() -> Bool {
-        return authToken != nil && currentUser != nil
+        return Auth.auth().currentUser != nil && currentUser != nil
     }
 }
