@@ -10,6 +10,7 @@ import Foundation
 // MARK: - User Model
 struct User: Codable, Identifiable {
     let id: String
+        let firebaseUID: String?
     let email: String
     let name: String?
     let createdAt: Date?
@@ -17,6 +18,7 @@ struct User: Codable, Identifiable {
     
     enum CodingKeys: String, CodingKey {
         case id
+                case firebaseUID = "firebase_uid"
         case email
         case name
         case createdAt = "created_at"
