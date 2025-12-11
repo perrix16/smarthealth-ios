@@ -13,3 +13,8 @@ targets:
             IPHONEOS_DEPLOYMENT_TARGET: "15.0"
 info:
     path: SmartHealth/Info.plist
+                UIInterfaceOrientationPortrait: true
+            UIInterfaceOrientationLandscapeLeft: true
+            UIInterfaceOrientationLandscapeRight: true
+            UIInterfaceOrientationPortraitUpsideDown: false
+            UILaunchStoryboardName: LaunchScreen
