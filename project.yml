@@ -8,7 +8,7 @@ targets:
         platform: iOS
         sources: [App, Models, Services, Views]
         settings:
-            PRODUCT_BUNDLE_IDENTIFIER: com.salvatore.smarthealthdev
+            PRODUCT_BUNDLE_IDENTIFIER: com.smarthealth.app
             INFOPLIST_FILE: SmartHealth/Info.plist
             IPHONEOS_DEPLOYMENT_TARGET: "15.0"
 info:
