@@ -24,7 +24,7 @@ class AuthService: ObservableObject {
         loadUser()
         
         // Firebase Auth state observer
-        Auth.auth().addStateDidChangeListener { [weak self] _, firebaseUser in
+        _ = Auth.auth().addStateDidChangeListener { [weak self] _, firebaseUser in
             if firebaseUser == nil {
                 self?.logout()
             }
