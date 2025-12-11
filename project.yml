@@ -1,7 +1,7 @@
 name: SmartHealth
 options:
     deploymentTarget:
-        iOS: 14.0
+        iOS: 15.0
 targets:
     SmartHealth:
         type: application
@@ -10,6 +10,6 @@ targets:
         settings:
             PRODUCT_BUNDLE_IDENTIFIER: com.salvatore.smarthealthdev
             INFOPLIST_FILE: SmartHealth/Info.plist
-            IPHONEOS_DEPLOYMENT_TARGET: "14.0"
+            IPHONEOS_DEPLOYMENT_TARGET: "15.0"
 info:
     path: SmartHealth/Info.plist
