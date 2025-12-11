@@ -1,16 +1,16 @@
 name: SmartHealth
 options:
-  deploymentTarget:
-    iOS: 15.0
+    deploymentTarget:
+        iOS: 13.0
 targets:
-  SmartHealth:
-    type: application
-    platform: iOS
-    sources: [App, Models, Services, Views]
-    settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.perrix16.smarthealth
-      DEVELOPMENT_TEAM: F85ZH3S3X
-      INFOPLIST_FILE: SmartHealth/Info.plist
-      IPHONEOS_DEPLOYMENT_TARGET: "15.0"
-    info:
-      path: SmartHealth/Info.plist
+    SmartHealth:
+        type: application
+        platform: iOS
+        sources: [App, Models, Services, Views]
+        settings:
+            PRODUCT_BUNDLE_IDENTIFIER: com.perrix16.smarthealth
+            DEVELOPMENT_TEAM: F85ZH3S3X
+            INFOPLIST_FILE: SmartHealth/Info.plist
+            IPHONEOS_DEPLOYMENT_TARGET: "13.0"
+info:
+    path: SmartHealth/Info.plist
