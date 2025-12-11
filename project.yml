@@ -8,6 +8,7 @@ targets:
         platform: iOS
         sources: [App, Models, Services, Views]
         settings:
+                    CODE_SIGN_STYLE: Automatic
             PRODUCT_BUNDLE_IDENTIFIER: com.elperrix.smarthealth
             INFOPLIST_FILE: SmartHealth/Info.plist
             IPHONEOS_DEPLOYMENT_TARGET: "15.0"
