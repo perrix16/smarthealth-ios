@@ -3,6 +3,7 @@ import SwiftUI
 @main
 struct SmartHealthApp: App {
     @StateObject private var authService = AuthService.shared
+        @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         WindowGroup {
