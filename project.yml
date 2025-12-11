@@ -9,7 +9,6 @@ targets:
         sources: [App, Models, Services, Views]
         settings:
             PRODUCT_BUNDLE_IDENTIFIER: com.salvatore.smarthealthdev
-            DEVELOPMENT_TEAM: F85ZH3S3X
             INFOPLIST_FILE: SmartHealth/Info.plist
             IPHONEOS_DEPLOYMENT_TARGET: "13.0"
 info:
