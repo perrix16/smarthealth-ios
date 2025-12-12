@@ -1,6 +1,5 @@
 import SwiftUI
-// import FirebaseCore
-
+import FirebaseCore
 // MARK: - AppDelegate for Firebase
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
