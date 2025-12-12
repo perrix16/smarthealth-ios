@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import FirebaseAuth
+// import FirebaseAuth
 
 class AuthService: ObservableObject {
     static let shared = AuthService()
