@@ -7,8 +7,7 @@
 
 import Foundation
 import Combine
-import FirebaseAuth
-class AuthService: ObservableObject {
+// import FirebaseAuthclass AuthService: ObservableObject {
     static let shared = AuthService()
     
     @Published var currentUser: User?
