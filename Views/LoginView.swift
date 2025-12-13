@@ -111,7 +111,7 @@ struct LoginView: View {
         
         Task {
             do {
-                _ = try await authService.login(email: email, password: password)
+                _ = try await authService.signIn(email: email, password: password)
                 await MainActor.run {
                     isLoading = false
                 }
