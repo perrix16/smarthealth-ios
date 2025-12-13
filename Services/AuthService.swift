@@ -44,7 +44,7 @@ func signIn(email: String, password: String) async throws {
     let response: LoginResponse = try await networkManager.request(
         endpoint: "/api/auth/login",
         method: .post,
-                body: ["email": email, "password": password]
+                body: ["email": email, "password": password])
     
     authToken = response.token
     currentUser = response.user
@@ -61,7 +61,7 @@ func signUp(email: String, password: String, name: String) async throws {
     let response: SignupResponse = try await networkManager.request(
         endpoint: "/api/auth/register",
         method: .post,
-                body: ["email": email, "password": password, "name": name]
+                body: ["email": email, "password": password, "name": name])
     
     authToken = response.token
     currentUser = response.user
