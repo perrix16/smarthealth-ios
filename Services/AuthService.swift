@@ -8,6 +8,18 @@
 import Foundation
 import Combine
 
+
+// Response models for API
+struct LoginResponse: Codable {
+    let token: String
+    let user: User
+}
+
+struct SignupResponse: Codable {
+    let token: String
+    let user: User
+}
+
 class AuthService: ObservableObject {
 
 static let shared = AuthService()
@@ -26,23 +38,13 @@ private init() {
 }
 
 func signIn(email: String, password: String) async throws {
-    struct LoginRequest: Codable {
-        let email: String
-        let password: String
-    }
     
-    struct LoginResponse: Codable {
-        let token: String
-        let user: User
-    }
     
-    let loginData = LoginRequest(email: email, password: password)
     
     let response: LoginResponse = try await networkManager.request(
         endpoint: "/api/auth/login",
         method: .post,
-        body: loginData
-    )
+                body: ["email": email, "password": password]
     
     authToken = response.token
     currentUser = response.user
@@ -53,24 +55,13 @@ func signIn(email: String, password: String) async throws {
 }
 
 func signUp(email: String, password: String, name: String) async throws {
-    struct SignupRequest: Codable {
-        let email: String
-        let password: String
-        let name: String
-    }
     
-    struct SignupResponse: Codable {
-        let token: String
-        let user: User
-    }
     
-    let signupData = SignupRequest(email: email, password: password, name: name)
     
     let response: SignupResponse = try await networkManager.request(
         endpoint: "/api/auth/register",
         method: .post,
-        body: signupData
-    )
+                body: ["email": email, "password": password, "name": name]
     
     authToken = response.token
     currentUser = response.user
