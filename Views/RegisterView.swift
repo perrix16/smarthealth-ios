@@ -105,7 +105,7 @@ struct RegisterView: View {
         
         Task {
             do {
-                try await authService.register(email: email, password: password, name: name)
+                try await authService.signUp(email: email, password: password, name: name)
                 await MainActor.run {
                     dismiss()
                 }
