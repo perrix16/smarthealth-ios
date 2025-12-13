@@ -186,7 +186,7 @@ struct ProfileView: View {
                 
                 Section {
                     Button("Logout", role: .destructive) {
-                        authService.logout()
+                        authService.signOut()
                         dismiss()
                     }
                 }
