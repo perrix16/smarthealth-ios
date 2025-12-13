@@ -42,7 +42,7 @@ class NetworkManager {
     static let shared = NetworkManager()
     
     // Production URL from Solid backend
-    private let baseURL = "https://preview-nskywevmbsy0ni9n9cj9oe.codapt.app"    
+    private let baseURL = "https://smarthealth.codapt.app"    
     private init() {}
     
     func request<T: Decodable>(
