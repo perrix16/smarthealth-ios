@@ -43,13 +43,43 @@ cd smarthealth-ios
 open SmartHealth.xcodeproj
 ```
 
+3. **IMPORTANTE - Limpiar caché de Firebase/CocoaPods:**
+
+```bash
+# Eliminar caché de Xcode
+rm -rf ~/Library/Developer/Xcode/DerivedData/*
+
+# Eliminar archivos de CocoaPods (si existen)
+rm -f Podfile.lock
+rm -rf Pods/
+rm -rf SmartHealth.xcworkspace
+```
+
+**⚠️ Nota**: Este proyecto ya NO usa Firebase. Usa integración directa con TrySolid API.
+
+
 3. Configure your Team ID:
    - Select the project in Xcode
    - Go to Signing & Capabilities
    - Select your development team
 
-4. Build and run (⌘R)
+4. **Build and run en Xcode:**
 
+Después de abrir el proyecto en Xcode:
+
+```
+1. Cmd + Shift + K  → Clean Build Folder
+2. Cmd + B          → Build (compilar)
+3. Selecciona tu iPhone o simulador en la barra superior
+4. Cmd + R          → Run (ejecutar)
+```
+
+**Atajos de teclado útiles:**
+- `Cmd + B` - Compilar el proyecto
+- `Cmd + R` - Ejecutar la app
+- `Cmd + .` - Detener la ejecución
+- `Cmd + Shift + K` - Limpiar build
+- `Cmd + Shift + O` - Abrir archivo rápidamente
 ## 🌐 Backend
 
 The app connects to the SmartHealth backend:
